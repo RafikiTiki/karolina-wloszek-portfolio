@@ -11,7 +11,8 @@ const getNumberOfSlidesToScroll = () => {
   }
 }
 
-export default function (scrollThrottle = 400, numberOfSlides, hoveredSlideIndex, onSlideCallback = doNothing) {
+// export default function (scrollThrottle = 400, numberOfSlides, hoveredSlideIndex, onSlideCallback = doNothing) {
+export default function (scrollThrottle = 400, onNextCallback, onPrevCallback) {
   const sliderRef = useRef(null)
   useEffect(() => {
     const slickSliderRef = sliderRef.current
@@ -20,17 +21,17 @@ export default function (scrollThrottle = 400, numberOfSlides, hoveredSlideIndex
 
       if (deltaX < 0 || deltaY < 0) {
         slickSliderRef.slickPrev()
-        const slidesToScroll = getNumberOfSlidesToScroll()
-        const newHoveredSlideIndex = Math.abs(hoveredSlideIndex - slidesToScroll) % numberOfSlides
-        // console.log('newHoveredSlideIndex', newHoveredSlideIndex)
-        onSlideCallback(newHoveredSlideIndex)
+        // const slidesToScroll = getNumberOfSlidesToScroll()
+        // const newHoveredSlideIndex = Math.abs(hoveredSlideIndex - slidesToScroll) % numberOfSlides
+        // onSlideCallback(newHoveredSlideIndex)
+        onPrevCallback()
 
       } else {
         slickSliderRef.slickNext()
-        const slidesToScroll = getNumberOfSlidesToScroll()
-        const newHoveredSlideIndex = (hoveredSlideIndex + slidesToScroll) % numberOfSlides
-        // console.log('newHoveredSlideIndex', newHoveredSlideIndex)
-        onSlideCallback(newHoveredSlideIndex)
+        // const slidesToScroll = getNumberOfSlidesToScroll()
+        // const newHoveredSlideIndex = (hoveredSlideIndex + slidesToScroll) % numberOfSlides
+        // onSlideCallback(newHoveredSlideIndex)
+        onNextCallback()
       }
     }, scrollThrottle))
 

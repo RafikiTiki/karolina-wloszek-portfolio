@@ -10,35 +10,13 @@ import useCursorScreenHalf from '../components/useCursorScreenHalf'
 import MobileProjectCaption from '../components/MobileProjectCaption'
 import { translate } from "react-i18next"
 import useSliderScrollHandler from "../custom-hooks/useSliderScrollHandler"
-import Hamster from "hamsterjs"
-import { throttle } from "../utils"
 
 const programaticSlideTime = 400
-const scrollDeltaThreshold = 3
 
 const Projects = ({location, lng}) => {
   const [ isAnyHovered, setIsAnyHovered ] = useState(false)
   const [ hoveredIndex, setHoveredIndex ] = useState(null)
   const cursorScreenHalf = useCursorScreenHalf();
-
-  // const sliderRef = useRef(null)
-  // useEffect(() => {
-  //   const sliderRef = sliderRef.current
-  //   const hamster = Hamster(document.getElementById('projects-page'))
-  //   hamster.wheel(throttle((event, delta, deltaX, deltaY) => {
-  //     if (Math.abs(deltaX) > scrollDeltaThreshold || Math.abs(deltaY) > scrollDeltaThreshold) {
-  //       if (deltaX < 0 || deltaY < 0) {
-  //         sliderRef.slickPrev()
-  //       } else {
-  //         sliderRef.slickNext()
-  //       }
-  //     }
-  //   }, programaticSlideTime))
-  //
-  //   return () => {
-  //     hamster.unwheel()
-  //   }
-  // }, [])
 
   const handleMouseEnter = (i) => {
     setIsAnyHovered(true)
@@ -50,7 +28,25 @@ const Projects = ({location, lng}) => {
     setHoveredIndex(null)
   }
 
-  const sliderRef = useSliderScrollHandler(programaticSlideTime, projectsData.length, hoveredIndex, handleMouseEnter)
+  const highlightNextSlide = () => {
+    // const nextHoveredIndex = hoveredIndex < projectsData.length
+    //   ? hoveredIndex + 1
+    //   : 0
+    // setHoveredIndex(nextHoveredIndex)
+    setHoveredIndex((hoveredIndex + 1) % projectsData.length)
+  }
+
+  const highlightPrevSlide = () => {
+    // const nextHoveredIndex = hoveredIndex > 0
+    //   ? hoveredIndex - 1
+    //   : projectsData.length - 1
+    // setHoveredIndex(nextHoveredIndex)
+    setHoveredIndex((hoveredIndex - 1) % projectsData.length)
+
+  }
+
+  // const sliderRef = useSliderScrollHandler(programaticSlideTime, projectsData.length, hoveredIndex, handleMouseEnter)
+  const sliderRef = useSliderScrollHandler(programaticSlideTime, highlightNextSlide, highlightPrevSlide)
 
   const projects = projectsData.map((project, i) => {
     return (
@@ -84,7 +80,7 @@ const Projects = ({location, lng}) => {
     slidesToShow: 4,
     infinite: true,
     arrows: true,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     lazyLoad: 'progressive',
     speed: programaticSlideTime,
     responsive: [
