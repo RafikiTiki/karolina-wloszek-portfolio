@@ -19,6 +19,10 @@
     @include tablet {
       font-size: 9rem;
     }
+
+    @include xs-small {
+      font-size: 5rem;
+    }
   }
 }
 
@@ -28,11 +32,10 @@
 }
 
 .introduction-wrapper {
-  width: 70%;
+  //width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
-  //height: 100vh;
   color: white;
   font-size: 2.5rem;
   line-height: 40%;
@@ -100,7 +103,7 @@
   to   { transform : translateY( 15px ); }
 }
 
-.title span {
+.greeting-title span {
   display: inline-block;
   animation-name: wave;
   animation-iteration-count: infinite;

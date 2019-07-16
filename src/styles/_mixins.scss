@@ -1,5 +1,9 @@
 @import 'variables';
 
+@mixin xs-small {
+    @media (max-width: 480px) { @content }
+}
+
 @mixin mobile {
     @media (max-width: 611px) { @content; }
 }
