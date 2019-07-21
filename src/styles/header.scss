@@ -12,16 +12,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-top: 25px;
     .center {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 95%;
     }
 
     a {
 
         .logo {
-            width: 2.2rem;;
+            width: 2.7rem;
             margin: auto 0;
             // position: relative;
             // top: 50%;

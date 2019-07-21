@@ -34,17 +34,17 @@ class LanguageSwitcher extends Component {
           onClick={() => this.handleChangeLanguage('pl')}
           style={{
             cursor: 'pointer',
-            color: this.state.language === 'pl' ? 'purple' : this.props.color,
+            fontWeight: this.state.language === 'pl' ? 700 : 400,
           }}
         >
           PL
         </span>
-        {' / '} 
+        {' | '}
         <span 
           onClick={() => this.handleChangeLanguage('en')}
           style={{
             cursor: 'pointer',
-            color: this.state.language === 'en' ? 'purple' : this.props.color,
+            fontWeight: this.state.language === 'en' ? 700 : 400,
           }}
         >
           EN

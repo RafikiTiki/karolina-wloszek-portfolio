@@ -10,9 +10,11 @@ import { translate } from "react-i18next"
 import { getAnimatedLetterStyle } from "../utils"
 import Slide from "react-reveal/Slide"
 import { useFullPageScroll } from "../custom-hooks/useFullPageScroll"
+import useSetBodyOverflowProp from "../custom-hooks/useSetBodyOverflowProp"
 
 const IndexPage = ({location, t, lng}) => {
   useAnimateWavesBackground()
+  useSetBodyOverflowProp('hidden')
   useFullPageScroll()
 
   let heading;
