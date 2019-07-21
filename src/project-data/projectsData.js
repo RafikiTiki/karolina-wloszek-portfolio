@@ -13,7 +13,7 @@ projectsData[0] = {
     route: 'mu-la',
     previewData: {
         caption: {
-            pl: 'Praca Licencjacka, projektowanie produktu',
+            pl: 'Praca Licencjacka, Projektowanie Produktu',
             en: 'Bachelor’s Thesis, Product Design',
         },
         img: projectPreviews.mula,
@@ -22,8 +22,8 @@ projectsData[0] = {
         coverImg: galleryData.mula[0],
         year: '2018',
         subtitle: {
-            pl: 'Modułowy instrument muzyczny wspomagający rozwój psychoruchowy dziecka.',
-            en: 'Modular music instrument that supports psychosomatic development of children from the age of 6.'
+            pl: 'Modułowy instrument muzyczny wspomagający rozwój psychoruchowy dziecka',
+            en: 'Modular music instrument that supports psychosomatic development of children from the age of 6'
         },
         paragraphs: {
             pl: [
@@ -51,7 +51,7 @@ projectsData[0] = {
                 },
                 {
                     title: 'MORE INFO',
-                    content: 'Bachelor’s Thesis Project accomplishment at the Tools and Work Environment Design Studio at the Academy of Fine Arts in Wrocław.'
+                    content: 'Bachelor’s Thesis Project accomplishment at the Ergonomics Studio at the Academy of Fine Arts in Wrocław.'
                 },
             ]
 
@@ -90,7 +90,7 @@ projectsData[1] = {
     previewData: {
         caption: {
             en: 'Graphic Design, Logo Design',
-            pl: 'Projektowanie Graficzne, Ilustracje, Projekt Logo',
+            pl: 'Projektowanie Graficzne, Projekt Logo',
         },
         img: projectPreviews.soapCompany,
     },
@@ -110,11 +110,11 @@ projectsData[1] = {
                 },
                 {
                     title: 'MOJA ROLA',
-                    content: <p>Projektowanie Graficzne, Ilustracje, Projekt Logo</p>
+                    content: <p>Projektowanie Graficzne, Projekt Logo</p>
                 },
                 {
                     title: 'WIĘCEJ INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ],
             en: [
@@ -128,7 +128,7 @@ projectsData[1] = {
                 },
                 {
                     title: 'MORE INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ],
         },
@@ -197,11 +197,11 @@ projectsData[2] = {
                 },
                 {
                     title: 'MOJA ROLA',
-                    content: <p>Projektowanie kostiumu, Wykonanie kostiumu</p>
+                    content: <p>Projektowanie Kostiumu, Wykonanie Kostiumu</p>
                 },
                 {
                     title: 'WSPÓŁPRACA',
-                    content: <p>Aleksandra Cząstka, <i>Teatr Dla Początkujących</i></p>
+                    content: <p>Aleksandra Cząstka</p>
                 },
                 {
                     title: 'KLIENT',
@@ -225,11 +225,11 @@ projectsData[2] = {
                 },
                 {
                     title: 'MY ROLE',
-                    content: <p>Projektowanie kostiumu, Wykonanie kostiumu</p>
+                    content: <p>Costume Design</p>
                 },
                 {
-                    title: 'WSPÓŁPRACA',
-                    content: <p>Aleksandra Cząstka, <i>Teatr Dla Początkujących</i></p>
+                    title: 'IN COOPERATION WITH',
+                    content: <p>Aleksandra Cząstka</p>
                 },
                 {
                     title: 'CLIENT',
@@ -260,7 +260,7 @@ projectsData[3] = {
     route: 'skladak',
     previewData: {
         caption: {
-            pl: 'Projektowanie produktu',
+            pl: 'Projektowanie Produktu',
             en: 'Product Design',
         },
         img: projectPreviews.skladak,
@@ -280,7 +280,7 @@ projectsData[3] = {
                 },
                 {
                     title: 'MOJA ROLA',
-                    content: <p>Projektowanie produktu</p>
+                    content: <p>Projektowanie Produktu</p>
                 },
                 {
                     title: 'WIĘCEJ INFO',
@@ -331,8 +331,8 @@ projectsData[4] = {
     route: 'moduu',
     previewData: {
         caption: {
-            pl: 'Projektowanie produktu',
-            en: 'Product design',
+            pl: 'Projektowanie Produktu',
+            en: 'Product Design',
         },
         img: projectPreviews.moduu,
     },
@@ -351,7 +351,7 @@ projectsData[4] = {
                 },
                 {
                     title: 'MOJA ROLA',
-                    content: <p>Projektowanie produktu</p>
+                    content: <p>Projektowanie Produktu</p>
                 },
                 {
                     title: 'WIĘCEJ INFO',
@@ -369,7 +369,7 @@ projectsData[4] = {
                 },
                 {
                     title: 'MY ROLE',
-                    content: <p>Projektowanie produktu</p>
+                    content: <p>Product Design</p>
                 },
                 {
                     title: 'MORE INFO',
@@ -435,7 +435,7 @@ projectsData[5] = {
                 },
                 {
                     title: 'WIĘCEJ INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ],
             en: [
@@ -459,7 +459,7 @@ projectsData[5] = {
                 },
                 {
                     title: 'MORE INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ]
         },
@@ -522,7 +522,7 @@ projectsData[6] = {
                 },
                 {
                     title: 'WIĘCEJ INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ],
             en: [
@@ -536,7 +536,7 @@ projectsData[6] = {
                 },
                 {
                     title: 'MORE INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ],
         },
@@ -592,11 +592,11 @@ projectsData[7] = {
                 },
                 {
                     title: 'MOJA ROLA',
-                    content: <p>Projektowanie Graficzne, Ilustracje, Projekt Logo</p>
+                    content: <p>Ilustracja</p>
                 },
                 {
                     title: 'WIĘCEJ INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ],
             en: [
@@ -606,11 +606,11 @@ projectsData[7] = {
                 },
                 {
                     title: 'MY ROLE',
-                    content: <p>Graphic Design, Logo Design</p>
+                    content: <p>Illustration</p>
                 },
                 {
                     title: 'MORE INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ],
         },
@@ -655,7 +655,7 @@ projectsData[8] = {
                 },
                 {
                     title: 'WIĘCEJ INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ],
             en: [
@@ -669,7 +669,7 @@ projectsData[8] = {
                 },
                 {
                     title: 'MORE INFO',
-                    content: <p>Personal project</p>
+                    content: <p>Personal Project</p>
                 },
             ],
         },
@@ -716,7 +716,7 @@ projectsData[9] = {
                 },
                 {
                     title: 'WIĘCEJ INFO',
-                    content: <p>Projekt konkursowy</p>
+                    content: <p>Projekt Konkursowy</p>
                 },
             ],
             en: [
@@ -726,7 +726,7 @@ projectsData[9] = {
                 },
                 {
                     title: 'MORE INFO',
-                    content: <p>Competition project</p>
+                    content: <p>Competition Project</p>
                 },
             ],
         },

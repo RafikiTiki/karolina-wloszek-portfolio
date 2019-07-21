@@ -29,7 +29,7 @@ export default function IntroText({ children, city }) {
   );
 }
 
-function IntroWord({ word, classNm }) {
+export function IntroWord({ word, classNm }) {
   return (
     <span style={{ display: 'inline-block' }} className={classNm ? classNm : null}>
       {word.split('').map((letter, i) => (

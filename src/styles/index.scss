@@ -48,26 +48,6 @@
       width: 100%;
       user-select: none;
       cursor: default;
-      .single-letter {
-        display: inline-block;
-        transform-origin: 50% 120%;
-
-        line-height: 100%;
-        overflow: hidden;
-      }
-      .hovered {
-        animation-name: stretch;
-        animation-duration: 0.15s;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards
-
-      }
-
-      .unhovered {
-        animation-name: stretch-back;
-        animation-duration: 0.25s;
-        animation-timing-function: linear;
-      }
 
       a {
         //color: rgb(236, 120, 107);
@@ -78,6 +58,27 @@
         width: 100%;
       }
     }
+}
+
+.single-letter {
+  display: inline-block;
+  transform-origin: 50% 120%;
+
+  line-height: 100%;
+  overflow: hidden;
+}
+.single-letter.hovered {
+  animation-name: stretch;
+  animation-duration: 0.15s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards
+
+}
+
+.single-letter.unhovered {
+  animation-name: stretch-back;
+  animation-duration: 0.25s;
+  animation-timing-function: linear;
 }
 
 .full-height-page {
@@ -132,6 +133,7 @@
   right: 50%;
 
   div {
+    cursor: pointer;
     font-weight: 800;
     font-size: 1.5rem;
     position: absolute;
@@ -139,7 +141,12 @@
     display: inline-block;
     transform: translateX(-45%);
     //animation: scrollIndicatorMove 2s infinite;
+    transition: transform 300ms ease-out;
   }
+}
+
+.scroll-indicator-text:hover {
+  transform: translateY(-10px) translateX(-45%);
 }
 
 @keyframes scrollIndicatorMove {

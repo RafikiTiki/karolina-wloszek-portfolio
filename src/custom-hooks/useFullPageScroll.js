@@ -42,8 +42,7 @@ export function useFullPageScroll() {
       return () => {
         hamster.unwheel()
       }
-    // }
-
-    return () => {}
   }, [isOnBottomPage])
+
+  return !isOnBottomPage
 }

@@ -15,7 +15,7 @@ import useSetBodyOverflowProp from "../custom-hooks/useSetBodyOverflowProp"
 const IndexPage = ({location, t, lng}) => {
   useAnimateWavesBackground()
   useSetBodyOverflowProp('hidden')
-  useFullPageScroll()
+  const isOnTopPage = useFullPageScroll()
 
   let heading;
   switch(lng) {
@@ -40,7 +40,7 @@ const IndexPage = ({location, t, lng}) => {
             <canvas id='background-canvas'/>
             <div className='center'>
               <div className='introduction-wrapper'>
-                <Fade duration={1500}>
+                <Fade duration={isOnTopPage ? 1500 : 400} when={isOnTopPage}>
                 <span className='greeting-title'>{heading.map((letter, index, array) => (
                   <span style={getAnimatedLetterStyle(index, array.length)}>{letter}</span>
                 ))}
@@ -48,9 +48,9 @@ const IndexPage = ({location, t, lng}) => {
                 </Fade>
               </div>
             </div>
-            <Slide bottom>
+            <Slide duration={500}  when={isOnTopPage} bottom>
               <div className='scroll-indicator'>
-                <div>{t('scroll')}</div>
+                <div className={'scroll-indicator-text'}>{t('scroll')}</div>
               </div>
             </Slide>
           </div>

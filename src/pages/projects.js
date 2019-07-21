@@ -29,23 +29,14 @@ const Projects = ({location, lng}) => {
   }
 
   const highlightNextSlide = () => {
-    // const nextHoveredIndex = hoveredIndex < projectsData.length
-    //   ? hoveredIndex + 1
-    //   : 0
-    // setHoveredIndex(nextHoveredIndex)
     setHoveredIndex((hoveredIndex + 1) % projectsData.length)
   }
 
   const highlightPrevSlide = () => {
-    // const nextHoveredIndex = hoveredIndex > 0
-    //   ? hoveredIndex - 1
-    //   : projectsData.length - 1
-    // setHoveredIndex(nextHoveredIndex)
     setHoveredIndex((hoveredIndex - 1) % projectsData.length)
 
   }
 
-  // const sliderRef = useSliderScrollHandler(programaticSlideTime, projectsData.length, hoveredIndex, handleMouseEnter)
   const sliderRef = useSliderScrollHandler(programaticSlideTime, highlightNextSlide, highlightPrevSlide)
 
   const projects = projectsData.map((project, i) => {
