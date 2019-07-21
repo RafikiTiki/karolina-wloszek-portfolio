@@ -70,11 +70,11 @@
       }
 
       a {
-        color: rgb(236, 120, 107);
+        //color: rgb(236, 120, 107);
         // animation-name: colors;
         // animation-duration: 1.5s;
         // animation-iteration-count: infinite;
-        display: inline-block;
+        //display: inline-block;
         width: 100%;
       }
     }
@@ -104,6 +104,18 @@
 }
 
 .greeting-title span {
+  display: inline-block;
+  animation-name: wave;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.wavy-letter-container {
+  margin-top: 20px;
+  color: #f3988e;
+}
+
+.wavy-letter-container span {
   display: inline-block;
   animation-name: wave;
   animation-iteration-count: infinite;

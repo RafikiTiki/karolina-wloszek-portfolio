@@ -57,7 +57,7 @@ const IndexPage = ({location, t, lng}) => {
             <div className='center'>
             <div className='introduction-wrapper'>
               <IntroText>
-                {t('intro-part1')}<span></span>{t('city')}.<br/>{t('intro-part2')}
+                {t('intro-part1')}<br/>{t('intro-part2')}
               </IntroText>
             </div>
           </div>
