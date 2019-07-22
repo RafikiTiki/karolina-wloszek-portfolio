@@ -38,7 +38,7 @@
   align-items: center;
   color: white;
   font-size: 2.5rem;
-  line-height: 40%;
+  //line-height: 40%;
   font-weight: 700;
     .intro-text {
       text-align: center;
@@ -48,6 +48,7 @@
       width: 100%;
       user-select: none;
       cursor: default;
+      line-height: 48px;
 
       a {
         //color: rgb(236, 120, 107);
@@ -64,8 +65,8 @@
   display: inline-block;
   transform-origin: 50% 120%;
 
-  line-height: 100%;
-  overflow: hidden;
+  //height: 100%;
+  //overflow: hidden;
 }
 .single-letter.hovered {
   animation-name: stretch;
@@ -112,6 +113,7 @@
 }
 
 .wavy-letter-container {
+  display: inline-block;
   margin-top: 20px;
   color: #f3988e;
 }

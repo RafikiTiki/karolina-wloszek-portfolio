@@ -15,14 +15,20 @@ export default function IntroText({ children, city }) {
         </Fragment>
       ))}
       <br/>
+      {children[2].split(' ').map((word, i) => (
+        <Fragment key={word + i}>
+          <IntroWord word={word} />
+          <span> </span>
+        </Fragment>
+      ))}
       {/* link */}
       <AniLink cover bg='#FFC2AD' to='/projects/'>
-        <div className={'wavy-letter-container'}>
-        {children[2].split('').map((letter, index, array) => letter === ' '
+        <span className={'wavy-letter-container'}>
+        {children[4].split('').map((letter, index, array) => letter === ' '
           ? <span style={getAnimatedLetterStyle(index, array.length)}>&nbsp;</span>
           : <span style={getAnimatedLetterStyle(index, array.length)}>{letter}</span>
         )}
-        </div>
+        </span>
       </AniLink>
     </p>
 
