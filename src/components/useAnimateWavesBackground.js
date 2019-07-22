@@ -6,20 +6,16 @@ export default function () {
     const canvas = document.getElementById('background-canvas')
 
     if (canvas) {
-      var context = canvas.getContext('2d');
+      const context = canvas.getContext('2d');
 
-      var width = canvas.width = window.innerWidth;
-      var height = canvas.height = window.innerHeight;
+      let width = canvas.width = window.innerWidth;
+      let height = canvas.height = window.innerHeight;
 
 
-      var waves = [];
-// Change these for more waves or bigger waves
+      let waves = [];
       const count = 5;
-// const waveHeight = 70;
-      const waveHeights = [height/1.2, height/1.7, height/2.6, 300, 125]
-// const waveHeights = [125, 300, height/2.6, height/1.7, height/1.2]
-
-      var colors = ["#EE7768", "#FF998C", "#FFBDA6", "#FFC2AD", "#FFCFBE"];
+      let waveHeights = [height/1.2, height/1.7, height/2.6, height/3, height/4]
+      const colors = ["#EE7768", "#FF998C", "#FFBDA6", "#FFC2AD", "#FFCFBE"];
 
       window.addEventListener('resize', resizeCanvas, false);
 
@@ -49,6 +45,13 @@ export default function () {
             bounce(wave.nodes[j], wave.waveHeight);
           }
           drawWave(waves[i]);
+        }
+      }
+
+      function recreateWaves() {
+        waves = []
+        for (let i = 0; i < count; i++) {
+          createWave(colors[i], 3, waveHeights[i]);
         }
       }
 
@@ -103,6 +106,9 @@ export default function () {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
 
+        waveHeights = [height/1.2, height/1.7, height/2.6, height/3, height/4]
+
+        recreateWaves()
         update();
       }
     }
