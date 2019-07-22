@@ -68,12 +68,12 @@ export function useFullPageScroll() {
       yDown = null
     }
 
-    document.addEventListener("wheel", handleScroll)
+    document.addEventListener("wheel", handleScroll, { passive: false })
     document.addEventListener("touchstart", handleTouchStart)
     document.addEventListener("touchmove", handleTouchMove, { passive: false })
 
     return () => {
-      document.removeEventListener("wheel", handleScroll)
+      document.removeEventListener("wheel", handleScroll, { passive: false })
       document.removeEventListener("touchstart", handleTouchStart)
       document.removeEventListener("touchmove", handleTouchMove, { passive: false })
     }
