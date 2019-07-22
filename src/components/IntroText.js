@@ -21,6 +21,7 @@ export default function IntroText({ children, city }) {
           <span> </span>
         </Fragment>
       ))}
+      <br/>
       {/* link */}
       <AniLink cover bg='#FFC2AD' to='/projects/'>
         <span className={'wavy-letter-container'}>

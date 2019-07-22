@@ -42,9 +42,6 @@
   font-weight: 700;
     .intro-text {
       text-align: center;
-      @include mobile {
-        text-align: left;
-      }
       width: 100%;
       user-select: none;
       cursor: default;
