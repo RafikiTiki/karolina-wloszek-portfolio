@@ -48,19 +48,21 @@ const IndexPage = ({location, t, lng}) => {
                 </Fade>
               </div>
             </div>
-            <Slide duration={500}  when={isOnTopPage} bottom>
+            <Fade duration={isOnTopPage ? 1500 : 400} when={isOnTopPage}>
               <div className='scroll-indicator'>
                 <div className={'scroll-indicator-text'}>{t('scroll')}</div>
               </div>
-            </Slide>
+            </Fade>
           </div>
 
           <div className='full-height-page'>
             <div className='center'>
             <div className='introduction-wrapper'>
-              <IntroText>
-                {t('intro-part1')}<br/>{t('intro-part2')}<br/>{t('intro-cta')}
-              </IntroText>
+              <Fade duration={!isOnTopPage ? 1500 : 400} when={!isOnTopPage}>
+                <IntroText>
+                  {t('intro-part1')}<br/>{t('intro-part2')}<br/>{t('intro-cta')}
+                </IntroText>
+              </Fade>
             </div>
           </div>
           </div>
