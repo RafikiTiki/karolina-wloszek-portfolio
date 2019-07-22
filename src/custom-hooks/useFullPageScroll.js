@@ -6,36 +6,36 @@ export function useFullPageScroll() {
   const [isOnBottomPage, onSetIsOnBottomPage] = useState(false)
   smoothscroll.polyfill()
 
+  const scrollToSecondPage = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      left: 0,
+      behavior: "smooth",
+    })
+    onSetIsOnBottomPage(true)
+  }
+
+  const scrollToFirstPage = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    })
+    onSetIsOnBottomPage(false)
+  }
+
   useEffect(() => {
     let yDown = null
-
-    const scrollToSecondPage = () => {
-      window.scrollTo({
-        top: window.innerHeight,
-        left: 0,
-        behavior: "smooth",
-      })
-    }
-
-    const scrollToFirstPage = () => {
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      })
-    }
 
     const handleScroll = event => {
       if (isOnBottomPage) {
         if (event.deltaY < 0) {
           event.preventDefault()
-          onSetIsOnBottomPage(false)
           scrollToFirstPage()
         }
       } else if (event.deltaY > 0) {
         event.preventDefault()
         scrollToSecondPage()
-        onSetIsOnBottomPage(true)
       }
     }
 
@@ -73,11 +73,15 @@ export function useFullPageScroll() {
     document.addEventListener("touchmove", handleTouchMove, { passive: false })
 
     return () => {
-      document.removeEventListener("wheel", handleScroll, { passive: false })
+      document.removeEventListener("wheel", handleScroll)
       document.removeEventListener("touchstart", handleTouchStart)
-      document.removeEventListener("touchmove", handleTouchMove, { passive: false })
+      document.removeEventListener("touchmove", handleTouchMove)
     }
   }, [isOnBottomPage])
 
-  return !isOnBottomPage
+  return {
+    isOnTopPage: !isOnBottomPage,
+    scrollToFirstPage,
+    scrollToSecondPage
+  }
 }

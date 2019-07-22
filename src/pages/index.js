@@ -8,14 +8,13 @@ import useAnimateWavesBackground from '../components/useAnimateWavesBackground'
 
 import { translate } from "react-i18next"
 import { getAnimatedLetterStyle } from "../utils"
-import Slide from "react-reveal/Slide"
 import { useFullPageScroll } from "../custom-hooks/useFullPageScroll"
 import useSetBodyOverflowProp from "../custom-hooks/useSetBodyOverflowProp"
 
 const IndexPage = ({location, t, lng}) => {
   useAnimateWavesBackground()
   useSetBodyOverflowProp('hidden')
-  const isOnTopPage = useFullPageScroll()
+  const { isOnTopPage, scrollToSecondPage }  = useFullPageScroll()
 
   let heading;
   switch(lng) {
@@ -36,7 +35,7 @@ const IndexPage = ({location, t, lng}) => {
       <SEO title="Portfolio" keywords={[`karolina włoszek`, `product design`, `design`, `portfolio`]} />
         <div id='index-page'>
 
-          <div className='full-height-page'>
+          <div className='full-height-page' onClick={scrollToSecondPage}>
             <canvas id='background-canvas'/>
             <div className='center'>
               <div className='introduction-wrapper'>
