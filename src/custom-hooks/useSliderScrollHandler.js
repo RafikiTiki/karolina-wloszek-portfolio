@@ -3,19 +3,12 @@ import Hamster from "hamsterjs"
 import { window, document } from 'browser-monads'
 import { doNothing, throttle } from "../utils"
 
-const getNumberOfSlidesToScroll = () => {
-  if (window.innerWidth > 899) {
-    return 2
-  } else {
-    return 1
-  }
-}
-
 // export default function (scrollThrottle = 400, numberOfSlides, hoveredSlideIndex, onSlideCallback = doNothing) {
 export default function (scrollThrottle = 400, onNextCallback, onPrevCallback) {
   const sliderRef = useRef(null)
   useEffect(() => {
     const slickSliderRef = sliderRef.current
+    // TODO: GET RID OF HAMSTERJS AND USE NORMAL WHEEL EVENT
     const hamster = Hamster(document.getElementById('projects-page'))
     hamster.wheel(throttle((event, delta, deltaX, deltaY) => {
 
