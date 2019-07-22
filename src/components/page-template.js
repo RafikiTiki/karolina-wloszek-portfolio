@@ -21,6 +21,8 @@ const Template = ({data, nextData, location, lng, t}) => {
     const [ linkTriggered, setLinkTriggered ] = useState(false)
 
     useEffect(() => {
+        let yDown = null
+
         const scrollToInfo = () => window.scrollTo({
             top: infoRef.current.offsetTop,
             left: 0,
@@ -35,16 +37,35 @@ const Template = ({data, nextData, location, lng, t}) => {
         }
 
         const handleTouchStart = event => {
-            event.preventDefault()
-            scrollToInfo()
+            yDown = event.touches[0].clientY
+        }
+
+        const handleTouchMove = event => {
+            if (!yDown) {
+                return
+            }
+
+            const yUp = event.touches[0].clientY
+            const yDiff = yDown - yUp
+
+            if (yDiff > 0) {
+                if (isOnTop) {
+                    event.preventDefault()
+                    scrollToInfo()
+                }
+            }
+
+            yDown = null
         }
         
         document.addEventListener('wheel', handleScroll, { passive: false })
-        document.addEventListener('touchmove', handleTouchStart, { passive: false })
+        document.addEventListener("touchstart", handleTouchStart)
+        document.addEventListener("touchmove", handleTouchMove, { passive: false })
 
         return () => {
             document.removeEventListener('wheel', handleScroll)
-            document.removeEventListener('touchmove', handleTouchStart)
+            document.removeEventListener("touchstart", handleTouchStart)
+            document.removeEventListener("touchmove", handleTouchMove)
         }
     }, [isOnTop])
     
