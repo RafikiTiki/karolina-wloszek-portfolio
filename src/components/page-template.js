@@ -5,7 +5,6 @@ import SEO from "./seo"
 import { window, document } from 'browser-monads'
 import smoothscroll from 'smoothscroll-polyfill'
 import useOnTopPosition from '../components/useOnTopPosition'
-import { detect } from 'detect-browser'
 import PageLink from '../components/PageLink'
 import { navigate } from 'gatsby'
 import Slide from 'react-reveal/Slide';
@@ -16,7 +15,6 @@ import { translate } from "react-i18next"
 const Template = ({data, nextData, location, lng, t}) => {
     const isOnTop = useOnTopPosition()
     const infoRef = useRef(null)
-    const browser = detect().name
     smoothscroll.polyfill()
 
     const [ nextPrjHov, setNextPrjHov ] = useState(false);
@@ -29,26 +27,10 @@ const Template = ({data, nextData, location, lng, t}) => {
             behavior: 'smooth',
         })
 
-        let handleScroll;
-        if (browser === 'firefox') {
-            handleScroll = () => {
-                scrollToInfo()
-                setTimeout(() => {
-                    scrollToInfo()
-                },200)
-                setTimeout(() => {
-                    scrollToInfo()
-                },300)
-            }
-        } else {
-            handleScroll = event => {
+        const handleScroll = event => {
+            if (isOnTop && event.deltaY > 0) {
                 event.preventDefault()
-                if (event.wheelDelta < 0 && event.wheelDelta > -100) {
-                    scrollToInfo()
-                    setTimeout(() => {
-                        scrollToInfo()
-                    },800)
-                }
+                scrollToInfo()
             }
         }
 
@@ -57,11 +39,11 @@ const Template = ({data, nextData, location, lng, t}) => {
             scrollToInfo()
         }
         
-        isOnTop && document.addEventListener(browser === 'firefox' ? 'scroll' : 'wheel', handleScroll, { passive: false })
-        isOnTop && document.addEventListener('touchmove', handleTouchStart, { passive: false })
+        document.addEventListener('wheel', handleScroll, { passive: false })
+        document.addEventListener('touchmove', handleTouchStart, { passive: false })
 
         return () => {
-            document.removeEventListener(browser === 'firefox' ? 'scroll' : 'wheel', handleScroll)
+            document.removeEventListener('wheel', handleScroll)
             document.removeEventListener('touchmove', handleTouchStart)
         }
     }, [isOnTop])

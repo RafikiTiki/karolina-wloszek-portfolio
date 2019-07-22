@@ -3,8 +3,6 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import { getAnimatedLetterStyle } from "../utils"
 
 export default function IntroText({ children, city }) {
-  console.log(children)
-
   return (
     <p className="intro-text">
       {/* początek tekstu */}
