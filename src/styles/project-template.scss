@@ -62,29 +62,18 @@
 
     section.center {
         display: flex;
-        @include mobile {
-            align-items: center;
-            min-height: 100vh;
-        }
-        @include tablet {
-            height: 100vh;
-        }
-        @include desktop {
-            height: 100vh;
-            align-items: center;
-        }
-        @include large-desktop {
-            height: 100vh;
-            align-items: center;
-        }
+        min-height: 100vh;
+        align-items: center;
         .project-info {
             display: flex;
             height: 70%;
             justify-content: space-around;
+            padding-top: 5rem;
+            padding-bottom: 2rem;
             @include mobile {
                 flex-direction: column;
                 align-items: center;
-                padding-top: 5rem;
+                //padding-top: 5rem;
                 padding-bottom: 2rem;
             }
             @include tablet {
