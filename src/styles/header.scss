@@ -65,13 +65,13 @@
             display: inline-block;
             &::after,
             &::before {
-                transition: ease-out 0.8s;
+                transition: ease-in-out 0.4s;
                 content: '';
                 display: block;
                 position: absolute;
                 width: 100%;
                 height: 2px;
-                background-color: black;
+                background-color: currentColor;
                 top: 50%;
                 transform-origin: 50% 50%;
                 left: 0;
@@ -83,7 +83,7 @@
                 &::before {
                     top: 45%;
                     left: 50%;
-                    width: 20%;
+                    width: 15px;
                     height: 2px;
                 }
 
