@@ -157,44 +157,46 @@
 
      
         .slick-arrow {
-            background: white;
+            &::before {
+                content: none;
+            }
+            &::after {
+                content: none;
+            }
+            z-index: 10;
+            width: 60px;
+            height: 60px;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 200ms ease-in-out;
 
-            &:hover {
-                &::before {
-                    opacity: 0.75;
+            & .arrow-image {
+                width: 25px;
+                height: 40px;
+            }
+
+            &.slick-prev {
+                left: 0;
+
+                & .arrow-image {
+                    content: url('../images/prev-arrow.png');
                 }
             }
+
+            &.slick-next {
+                right: 0;
+
+
+                & .arrow-image {
+                    content: url('../images/next-arrow.png');
+                }
+            }
+
         }
 
-        .slick-arrow::before {
-            color: black;
-            font-size: 2rem;
-            position: absolute;
-            top: 0;
-            opacity: 1;
-            transform: scale(0.15);
-            @include mobile {
-                transform: scale(0.25);
-                top: -1rem;
-            }
-            @include tablet {
-                transform: scale(0.20);
-                top: -2rem;
-            }
-            transform-origin: 50% 0;
-            z-index: 10000000000000;
-        }
-        .slick-prev {
-            z-index: 1;
-        }
-        .slick-prev::before {
-            content: url('../images/arrow-prev.png');
-            right: -500%;
-        }
-        
-        .slick-next::before {
-            content: url('../images/arrow-next.png');
-            left: -500%;
+        .slick-arrow:hover {
+            opacity: 0.8;
         }
       
         .slick-dots {

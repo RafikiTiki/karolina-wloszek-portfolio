@@ -64,16 +64,15 @@ const Projects = ({location, lng}) => {
     return <div key={e.title + i} className={hoveredIndex === i ? 'dot active' : 'dot'} />
   })
 
-
-
   const slickSettings = {
     dots: false,
     slidesToShow: 4,
     infinite: true,
-    arrows: true,
     slidesToScroll: 1,
     lazyLoad: 'progressive',
     speed: programaticSlideTime,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 599,
@@ -111,6 +110,32 @@ const Projects = ({location, lng}) => {
       </div>
     </Layout>
   )
+}
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block"}}
+      onClick={onClick}
+    >
+      <div className={'arrow-image'} />
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block"}}
+      onClick={onClick}
+    >
+      <div className={'arrow-image'} />
+    </div>
+  );
 }
 
 export default translate()(Projects)
