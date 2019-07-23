@@ -13,6 +13,17 @@
     align-items: center;
     justify-content: space-between;
     padding-top: 25px;
+    @include mobile {
+        padding-top: 0;
+    }
+
+    &.header-with-overlay {
+        @include mobile {
+            padding-top: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
+
     .center {
         display: flex;
         justify-content: space-between;

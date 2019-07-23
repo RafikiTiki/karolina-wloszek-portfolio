@@ -49,7 +49,7 @@ const HeaderContainer = styled.header`
 
 const Header = ({fontColor, location, t}) => {
   return (
-    <HeaderContainer id='header' color={fontColor}>
+    <HeaderContainer id='header' className={getHeaderContainerClassName(location)} color={fontColor}>
       <div className='center'>
         <PageLink to='/'>
             <img alt='logo' src={fontColor === 'white' ? logoWhite : logoBlack} className='logo'/>
@@ -90,6 +90,17 @@ function HeaderNavLink({ children, currentLocation, targetLocation }) {
       </PageLink>
     </li>
   )
+}
+
+// add white background to header in project pages
+function getHeaderContainerClassName(location) {
+  if (typeof location === 'string') {
+    return location.match(/\/projects\/.+/)
+      ? 'header-with-overlay'
+      : ''
+  } else {
+    return ''
+  }
 }
 
 // export default Header
