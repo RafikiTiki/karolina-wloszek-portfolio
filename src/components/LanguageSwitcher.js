@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import classNames from "classnames"
 import { translate } from "react-i18next"
 
 class LanguageSwitcher extends Component {
@@ -17,19 +16,15 @@ class LanguageSwitcher extends Component {
 
   handleChangeLanguage(lng) {
     const { i18n } = this.props
-    i18n.changeLanguage(lng)
+    i18n.changeLanguage(lng, () => {
+      localStorage.setItem('i18nextLng', lng)
+    })
   }
 
   
   render() {
-    const languages = [
-      { code: "en", label: "EN" },
-      { code: "pl", label: "PL" },
-    ]
-
     return (
       <li className="LanguageSwitcher">
-        {/* {languages.map(language => this.renderLanguageChoice(language))} */}
         <span
           onClick={() => this.handleChangeLanguage('pl')}
           style={{
