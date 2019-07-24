@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { IntroWord } from "../components/IntroText"
 
-function AboutMe({location, t}) {
+function AboutMe({location, t, lng}) {
   return (
 
     <Layout fontColor='inherit' location={location.pathname}>
@@ -20,7 +20,7 @@ function AboutMe({location, t}) {
             </React.Fragment>
           ))}
         </p>
-        <p className={'description-wrapper'}>
+        <p className={'description-wrapper'} style={{ maxWidth: lng === 'pl' ? 800 :  970}}>
           {t('description').split(' ').map((word, i) => (
             <React.Fragment>
               <IntroWord word={word} />

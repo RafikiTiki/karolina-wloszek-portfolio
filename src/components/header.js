@@ -17,8 +17,8 @@ const HeaderContainer = styled.header`
         content: '';
         position: absolute;
         width: 0%;
-        height: 0.12rem;
-        top: 50%;
+        height: 2px;
+        top: 42%;
         margin-top: -0.5px;
         background: #fff;
       }
