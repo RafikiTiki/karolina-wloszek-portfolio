@@ -36,9 +36,9 @@ function AboutMe({location, t}) {
           <span>{t('designed-by')}</span>
           <br/>
           <span>{t('developed-by')}</span>
-          <a href={'https://www.linkedin.com/in/antoni-sierakowski/'}>{t('antoni-sierakowski')}</a>
+          <a href={'https://www.linkedin.com/in/antoni-sierakowski/'} target={'_blank'}>{t('antoni-sierakowski')}</a>
           <span>{t('and')}</span>
-          <a href={'https://www.linkedin.com/in/rafa%C5%82-zakrzewski-942304128/'}>{t('rafal-zakrzewski')}</a>
+          <a href={'https://www.linkedin.com/in/rafa%C5%82-zakrzewski-942304128/'} target={'_blank'}>{t('rafal-zakrzewski')}</a>
         </footer>
       </div>
     </Layout>
