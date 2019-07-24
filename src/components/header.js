@@ -95,7 +95,7 @@ function HeaderNavLink({ children, currentLocation, targetLocation }) {
 // add white background to header in project pages
 function getHeaderContainerClassName(location) {
   if (typeof location === 'string') {
-    return location.match(/\/projects\/.+/)
+    return location.match(/\/projects\/.+/) || location.match(/\/about-me\//)
       ? 'header-with-overlay'
       : ''
   } else {

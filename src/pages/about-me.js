@@ -1,38 +1,48 @@
 import React from "react"
 import '../styles/about-me.scss'
+import { translate } from "react-i18next"
+
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import { IntroWord } from "../components/IntroText"
 
-export default function AboutMe({location, lng}) {
-
-  const description = 'Zajmuję się projektowaniem form użytkowych i projektowaniem graficznym. Mieszkam i pracuję we Wrocławiu i jestem absolwentką wzornictwa na tutejszej ASP, z dyplomem licencjata. Oprócz projektowania ilustruję, maluję, pożeram książki i podróżuję.'
-
-
+function AboutMe({location, t}) {
   return (
 
-    <Layout fontColor='white' location={location.pathname}>
+    <Layout fontColor='inherit' location={location.pathname}>
       <SEO title="Projekty" keywords={[`karolina włoszek`, `product design`, `design`, `portfolio`]}/>
       <div id='about-me-page' className='background'>
-        <div>
-          {'Cześć, jestem Karolina!'.split(' ').map((word, i) => (
+        <p className={'greeting-wrapper'}>
+          {t('greeting').split(' ').map((word, i) => (
             <React.Fragment>
               <IntroWord word={word} />
               <span> </span>
             </React.Fragment>
           ))}
-        </div>
-        <br/>
-        <br/>
-        <div className={'description-wrapper'}>
-          {description.split(' ').map((word, i) => (
+        </p>
+        <p className={'description-wrapper'}>
+          {t('description').split(' ').map((word, i) => (
             <React.Fragment>
               <IntroWord word={word} />
               <span> </span>
             </React.Fragment>
           ))}
+        </p>
+        <div className={'lets-meet-wrapper'}>
+          <p className={'lets-meet'}>{t('lets-meet')}</p>
+          <a className={'mail'} href={'mailto:wloszekkarolina@gmail.com'}>wloszekkarolina@gmail.com</a>
         </div>
+        <footer className={'footer'}>
+          <span>{t('designed-by')}</span>
+          <br/>
+          <span>{t('developed-by')}</span>
+          <a href={'https://www.linkedin.com/in/antoni-sierakowski/'}>{t('antoni-sierakowski')}</a>
+          <span>{t('and')}</span>
+          <a href={'https://www.linkedin.com/in/rafa%C5%82-zakrzewski-942304128/'}>{t('rafal-zakrzewski')}</a>
+        </footer>
       </div>
     </Layout>
   )
 }
+
+export default translate('AboutMe')(AboutMe)
