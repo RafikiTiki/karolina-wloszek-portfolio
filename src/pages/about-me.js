@@ -9,7 +9,7 @@ import { IntroWord } from "../components/IntroText"
 function AboutMe({location, t, lng}) {
   return (
 
-    <Layout fontColor='inherit' location={location.pathname}>
+    <Layout fontColor='white' location={location.pathname}>
       <SEO title="Projekty" keywords={[`karolina włoszek`, `product design`, `design`, `portfolio`]}/>
       <div id='about-me-page' className='background'>
         <p className={'greeting-wrapper'}>
