@@ -12,19 +12,18 @@ export default function (scrollThrottle = 400, onNextCallback, onPrevCallback) {
     const hamster = Hamster(document.getElementById('projects-page'))
     hamster.wheel(throttle((event, delta, deltaX, deltaY) => {
 
-      if (deltaX < 0 || deltaY < 0) {
-        slickSliderRef.slickPrev()
-        // const slidesToScroll = getNumberOfSlidesToScroll()
-        // const newHoveredSlideIndex = Math.abs(hoveredSlideIndex - slidesToScroll) % numberOfSlides
-        // onSlideCallback(newHoveredSlideIndex)
-        onPrevCallback()
-
-      } else {
+      if (deltaX > 0 || deltaY < 0) {
         slickSliderRef.slickNext()
         // const slidesToScroll = getNumberOfSlidesToScroll()
         // const newHoveredSlideIndex = (hoveredSlideIndex + slidesToScroll) % numberOfSlides
         // onSlideCallback(newHoveredSlideIndex)
         onNextCallback()
+      } else {
+        slickSliderRef.slickPrev()
+        // const slidesToScroll = getNumberOfSlidesToScroll()
+        // const newHoveredSlideIndex = Math.abs(hoveredSlideIndex - slidesToScroll) % numberOfSlides
+        // onSlideCallback(newHoveredSlideIndex)
+        onPrevCallback()
       }
     }, scrollThrottle))
 
