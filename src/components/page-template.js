@@ -68,6 +68,50 @@ const Template = ({data, nextData, location, lng, t}) => {
             document.removeEventListener("touchmove", handleTouchMove)
         }
     }, [isOnTop])
+
+    const bottomRef = useRef(null)
+
+    useEffect(() => {
+        if (!bottomRef) {
+            return
+        }
+        let xDown = null
+        let yDown = null
+
+        const handleTouchStart = event => {
+            xDown = event.touches[0].clientX
+            yDown = event.touches[0].clientY
+        }
+
+        const handleTouchMove = event => {
+            if (!xDown || !yDown) {
+                return
+            }
+
+            const xUp = event.changedTouches[0].clientX
+            const yUp = event.changedTouches[0].clientY
+
+            const xDiff = xDown - xUp
+            const yDiff = yDown - yUp
+
+
+            if (xDiff > 10 && Math.abs(yDiff) < 100) {
+                event.preventDefault()
+                // go to next project
+                handleNextProjectClick()
+            }
+
+            xDown = null
+        }
+
+        bottomRef.current.addEventListener("touchstart", handleTouchStart)
+        bottomRef.current.addEventListener("touchend", handleTouchMove, { passive: false })
+
+        return () => {
+            bottomRef.current.removeEventListener("touchstart", handleTouchStart)
+            bottomRef.current.removeEventListener("touchend", handleTouchMove)
+        }
+    })
     
     const handleCoverClick = () => {
         window.scrollTo({top: infoRef.current.offsetTop, behavior: 'smooth'})
@@ -176,7 +220,7 @@ const Template = ({data, nextData, location, lng, t}) => {
 
                 <section className='project-bottom' style={{backgroundImage: `url(${nextData.contentData.coverImg})`}}>
                     <div className={nextPrjHov ? 'background active' : 'background'} style={linkTriggered ? {opacity: '0'} : null}>
-                        <div className={linkTriggered ? 'next-project active' : 'next-project'}>
+                        <div ref={bottomRef} className={linkTriggered ? 'next-project active' : 'next-project'}>
                             <div className='wrapper'>
                                 <h1 className='title' onClick={handleNextProjectClick} onMouseEnter={() => setNextPrjHov(true)} onMouseLeave={() => setNextPrjHov(false)}>
                                     <PageLink to={'/projects/' + nextData.route}>
