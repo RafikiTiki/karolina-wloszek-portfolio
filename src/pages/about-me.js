@@ -10,7 +10,7 @@ function AboutMe({location, t, lng}) {
   return (
 
     <Layout fontColor='white' location={location.pathname}>
-      <SEO title="Projekty" keywords={[`karolina włoszek`, `product design`, `design`, `portfolio`]}/>
+      <SEO title={t("About-me")} keywords={[`karolina włoszek`, `product design`, `design`, `portfolio`]}/>
       <div id='about-me-page' className='background'>
         <p className={'greeting-wrapper'}>
           {t('greeting').split(' ').map((word, i) => (

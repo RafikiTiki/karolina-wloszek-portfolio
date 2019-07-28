@@ -13,7 +13,7 @@ import useSliderScrollHandler from "../custom-hooks/useSliderScrollHandler"
 
 const programaticSlideTime = 400
 
-const Projects = ({location, lng}) => {
+const Projects = ({location, lng, t}) => {
   const [ isAnyHovered, setIsAnyHovered ] = useState(false)
   const [ hoveredIndex, setHoveredIndex ] = useState(null)
   const cursorScreenHalf = useCursorScreenHalf();
@@ -97,7 +97,7 @@ const Projects = ({location, lng}) => {
   
   return (
     <Layout fontColor='inherit' location={location.pathname}>
-    <SEO title="Projekty" keywords={[`karolina włoszek`, `product design`, `design`, `portfolio`]}/>
+    <SEO title={t("Projects")} keywords={[`karolina włoszek`, `product design`, `design`, `portfolio`]}/>
       <div id='projects-page' className='background'>
           <div className='slider-wrapper'>
             <Slider ref={sliderRef} {...slickSettings}>
@@ -138,4 +138,4 @@ function SamplePrevArrow(props) {
   );
 }
 
-export default translate()(Projects)
+export default translate('Projects')(Projects)
