@@ -61,8 +61,8 @@ import voicemailCover from '../images/gallery/voicemail/cover.jpg'
 import voicemail1 from '../images/gallery/voicemail/1.jpg'
 import voicemail2 from '../images/gallery/voicemail/2.gif'
 
-import costamCover from '../images/gallery/costam/cover.jpg'
-import costam1 from '../images/gallery/costam/1.jpg'
+// import costamCover from '../images/gallery/costam/cover.jpg'
+// import costam1 from '../images/gallery/costam/1.jpg'
 
 import rethinkCover from '../images/gallery/re-think/cover.jpg'
 import rethink1 from '../images/gallery/re-think/1.jpg'
@@ -101,9 +101,9 @@ const galleryData = {
     voicemail: [
         voicemailCover, voicemail1, voicemail2,
     ],
-    costam: [
-        costamCover, costam1,
-    ],
+    // costam: [
+    //     costamCover, costam1,
+    // ],
     rethink: [
         rethinkCover, rethink1, rethink2, rethink3, rethink4, rethink5, rethink6, rethink7,
     ]

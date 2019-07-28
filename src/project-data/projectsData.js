@@ -564,66 +564,67 @@ projectsData[6] = {
 }
 
 // costam
-projectsData[7] = {
-    title: {
-        pl: 'Cośtam',
-        en: 'Cośtam',
-    },
-    route: 'costam',
-    previewData: {
-        caption: {
-            pl: 'easdasd',
-            en: 'asdasdaehfjiwoejfw'
-        },
-        img: projectPreviews.costam,
-    },
-    contentData: {
-        coverImg: galleryData.costam[0],
-        year: '2017',
-        subtitle: {
-            pl: 'asdasdasd',
-            en: 'asdasdasd'
-        },
-        paragraphs: {
-            pl: [
-                {
-                    title: 'OPIS',
-                    content: <p>Projekt logo oraz identyfikacji wizualnej dla fikcyjnej marki ręcznie produkującej mydła - The Soap Company.</p>
-                },
-                {
-                    title: 'MOJA ROLA',
-                    content: <p>Ilustracja</p>
-                },
-                {
-                    title: 'WIĘCEJ INFO',
-                    content: <p>Personal Project</p>
-                },
-            ],
-            en: [
-                {
-                    title: 'ABOUT',
-                    content: <p>Logo design and visual identity for a fictional brand that manufactures soap - The Soap Company.</p>
-                },
-                {
-                    title: 'MY ROLE',
-                    content: <p>Illustration</p>
-                },
-                {
-                    title: 'MORE INFO',
-                    content: <p>Personal Project</p>
-                },
-            ],
-        },
-        gallery: [
-            [
-                galleryData.costam[1]
-            ],
-        ]
-    },
-}
+// projectsData[7] = {
+//     title: {
+//         pl: 'Cośtam',
+//         en: 'Cośtam',
+//     },
+//     route: 'costam',
+//     previewData: {
+//         caption: {
+//             pl: 'easdasd',
+//             en: 'asdasdaehfjiwoejfw'
+//         },
+//         img: projectPreviews.costam,
+//     },
+//     contentData: {
+//         coverImg: galleryData.costam[0],
+//         year: '2017',
+//         subtitle: {
+//             pl: 'asdasdasd',
+//             en: 'asdasdasd'
+//         },
+//         paragraphs: {
+//             pl: [
+//                 {
+//                     title: 'OPIS',
+//                     content: <p>Projekt logo oraz identyfikacji wizualnej dla fikcyjnej marki ręcznie produkującej mydła - The Soap Company.</p>
+//                 },
+//                 {
+//                     title: 'MOJA ROLA',
+//                     content: <p>Ilustracja</p>
+//                 },
+//                 {
+//                     title: 'WIĘCEJ INFO',
+//                     content: <p>Personal Project</p>
+//                 },
+//             ],
+//             en: [
+//                 {
+//                     title: 'ABOUT',
+//                     content: <p>Logo design and visual identity for a fictional brand that manufactures soap - The Soap Company.</p>
+//                 },
+//                 {
+//                     title: 'MY ROLE',
+//                     content: <p>Illustration</p>
+//                 },
+//                 {
+//                     title: 'MORE INFO',
+//                     content: <p>Personal Project</p>
+//                 },
+//             ],
+//         },
+//         gallery: [
+//             [
+//                 galleryData.costam[1]
+//             ],
+//         ]
+//     },
+// }
 
 // ilustracje
-projectsData[8] = {
+// projectsData[8] = {
+projectsData[7] = {
     title: {
         pl: '3x3',
         en: '3x3',
@@ -688,7 +689,8 @@ projectsData[8] = {
 }
 
 // ulicznicy
-projectsData[9] = {
+// projectsData[9] = {
+projectsData[8] = {
     title: {
         pl: 'Ulicznicy',
         en: 'Ulicznicy',
@@ -742,7 +744,8 @@ projectsData[9] = {
 }
 
 // voicemail
-projectsData[10] = {
+// projectsData[10] = {
+projectsData[9] = {
     title: {
         pl: 'Voicemail',
         en: 'Voicemail',
