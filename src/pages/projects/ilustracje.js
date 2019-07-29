@@ -3,7 +3,7 @@ import projectsData from '../../project-data/projectsData'
 import Template from '../../components/page-template'
 
 export default function Ilustracje({location}) {
-  const i = 8
+  const i = 7
   return (
     <Template data={projectsData[i]} nextData={projectsData[i + 1 === projectsData.length ? 0 : i + 1]} location={location.pathname}/>
   )
